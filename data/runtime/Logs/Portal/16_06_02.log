@@ -1,0 +1,60 @@
+[ 2016-06-02T13:47:10+08:00 ] ::1 /admin/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-02T14:06:23+08:00 ] ::1 /admin/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-02T14:08:59+08:00 ] ::1 /admin/index.php?g=&m=AdminPost&a=delete&term=&tid=14
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+SQL: SHOW COLUMNS FROM `cmf_posts` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `cmf_terms` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_term_relationships` [ RunTime:0.0020s ]
+SQL: UPDATE `cmf_term_relationships` SET `status`='0' WHERE ( tid=14 ) [ RunTime:0.0020s ]
+
+[ 2016-06-02T14:08:59+08:00 ] ::1 /admin/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-02T14:09:01+08:00 ] ::1 /admin/index.php?g=&m=AdminPost&a=delete&term=&tid=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+SQL: SHOW COLUMNS FROM `cmf_posts` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_terms` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_term_relationships` [ RunTime:0.0020s ]
+SQL: UPDATE `cmf_term_relationships` SET `status`='0' WHERE ( tid=13 ) [ RunTime:0.0000s ]
+
+[ 2016-06-02T14:09:01+08:00 ] ::1 /admin/index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-02T14:09:07+08:00 ] ::1 /admin/index.php?g=&m=AdminPost&a=add&term=
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-06-02T14:09:17+08:00 ] ::1 /admin/index.php?g=&m=AdminPost&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+SQL: SHOW COLUMNS FROM `cmf_posts` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_terms` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_term_relationships` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_posts` (`post_title`,`post_keywords`,`post_source`,`post_excerpt`,`post_modified`,`post_status`,`istop`,`recommended`,`post_content`,`post_date`,`post_author`,`smeta`) VALUES ('1111111111111','11111111111111','11111111111111','1111111111111111111','2016-06-02 14:09:07','1','0','0','<p>1111111111111111111111111111</p>','2016-06-02 14:09:17','1','{\"thumb\":\"\"}') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_posts` [ RunTime:0.0030s ]
+SQL: UPDATE `cmf_posts` SET `tdc`='data/upload/images/1464847757.png' WHERE (  id = 18  ) [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_term_relationships` (`term_id`,`object_id`) VALUES ('1','18') [ RunTime:0.0000s ]
+
+[ 2016-06-02T14:09:20+08:00 ] ::1 /admin/index.php?g=&m=AdminPost&a=index
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+

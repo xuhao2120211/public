@@ -1,0 +1,273 @@
+[ 2016-05-30T15:52:33+08:00 ] ::1 /admin/index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:52:35+08:00 ] ::1 /admin/index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:52:49+08:00 ] ::1 /admin/index.php?g=Admin&m=menu&a=lists
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:53:18+08:00 ] ::1 /admin/index.php?g=Admin&m=menu&a=edit&id=141
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:53:23+08:00 ] ::1 /admin/index.php?g=Admin&m=Menu&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_menu` [ RunTime:0.0020s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `cmf_auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT `id` FROM `cmf_menu` WHERE `app` = 'Admin' AND `model` = 'Rbac' AND `action` = 'member' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_menu` SET `parentid`='140',`name`='成员管理',`app`='Admin',`model`='Rbac',`action`='member',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 141 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_auth_rule` WHERE `name` = 'admin/rbac/member' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_auth_rule` SET `name`='admin/rbac/member',`module`='Admin',`type`='admin_url',`title`='成员管理' WHERE `name` = 'admin/rbac/member' [ RunTime:0.0010s ]
+
+[ 2016-05-30T15:53:23+08:00 ] ::1 /admin/index.php?g=Admin&m=menu&a=edit&id=141
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:53:28+08:00 ] ::1 /admin/index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:53:31+08:00 ] ::1 /admin/index.php?g=Admin&m=menu&a=lists
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-30T15:59:49+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 15:59:49',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:01:02+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:01:02',`create_time`='2016-05-30 09:33:01',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:02:49+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:02:49',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:05:38+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:05:38',`create_time`='2016-05-30 09:33:01',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:12:08+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-30T16:12:13+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:12:13',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:41:21+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:41:21',`create_time`='2016-05-30 09:33:01',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:49:59+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-30T16:50:08+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:50:08',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:50:08+08:00 ] ::1 /admin/index.php?g=Admin&m=Index&a=index
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-05-30T16:52:58+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-05-30T16:53:04+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:53:04',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:53:56+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-30T16:54:05+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:54:05',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:54:17+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-30T16:54:22+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin2',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin2',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:54:22',`create_time`='2016-05-30 02:27:09',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='2',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:54:49+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='admin',`user_email`='252781711@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:54:49',`create_time`='2016-05-30 09:33:01',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:55:40+08:00 ] ::1 /admin/index.php?g=Admin&m=User&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin2' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:56:33+08:00 ] ::1 /admin/index.php?g=Admin&m=User&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_email` = '252781711@qq.com' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:56:43+08:00 ] ::1 /admin/index.php?g=Admin&m=User&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `cmf_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_email` = '111111@qq.com' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_users` (`user_login`,`user_pass`,`user_email`,`create_time`) VALUES ('admin3','###80eaf31f1ae8afeb0ad41cc596473a7b','111111@qq.com','2016-05-30 16:56:43') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_role_user` (`role_id`,`user_id`) VALUES ('2','5') [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:56:49+08:00 ] ::1 /admin/index.php?g=Admin&m=User&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `cmf_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin3' AND `id` <> '5' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_email` = '111111@qq.com' AND `id` <> '5' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: birthday C:\wamp\www\admin\codecenter\Core\Library\Think\Model.class.php 第 1159 行.
+SQL: UPDATE `cmf_users` SET `user_login`='admin3',`user_email`='111111@qq.com' WHERE `id` = '5' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: DELETE FROM `cmf_role_user` WHERE `user_id` = 5 [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_role_user` (`role_id`,`user_id`) VALUES ('2','5') [ RunTime:0.0000s ]
+
+[ 2016-05-30T16:57:56+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '5' AND `status` = 1  [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin3',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='',`user_email`='111111@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:57:56',`create_time`='2016-05-30 16:56:43',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '5' [ RunTime:0.0010s ]
+
+[ 2016-05-30T16:59:26+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-30T16:59:47+08:00 ] ::1 /admin/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin3' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0020s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '5' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin3',`user_pass`='###80eaf31f1ae8afeb0ad41cc596473a7b',`user_nicename`='',`user_email`='111111@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-30 16:59:47',`create_time`='2016-05-30 16:56:43',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '5' [ RunTime:0.0000s ]
+
