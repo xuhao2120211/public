@@ -1,5 +1,8 @@
-/data
 /.buildpath
 /.project
 /.settings/org.eclipse.php.core.prefs
 /.settings/org.eclipse.wst.common.project.facet.core.xml
+/data/conf/db.php
+/data/runtime
+/data/upload
+/data/uc_cache
