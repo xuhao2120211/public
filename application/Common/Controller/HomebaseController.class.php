@@ -47,6 +47,45 @@ class HomebaseController extends AppframeController {
 		
 	}
 	
+	public function check_open_token(){
+		$openid	= session('WX_OPENID');
+		$touken	= session('WX_USER_TOKEN');
+		
+		if($openid && $touken){
+			$url = 'https://api.weixin.qq.com/sns/auth?access_token=' . $touken . '&openid=' . $openid;
+			$end = curl_get($url);
+			$end_msg = $end['errmsg'];
+		}
+		
+		if(empty($openid) || empty($touken) || $end_msg != 'ok'){
+			$code	= I('get.code') ? : session('WX_OPENID');
+			session('WX_OPENID', $code);
+			if(empty($code)){
+				D('WxUser')->get_code();
+			}
+			
+			$wx_user = D('WxUser')->get_date();
+			
+			session('WX_OPENID', $wx_user['openid'], 7200);
+			session('WX_USER_TOKEN', $wx_user['access_token'], 7200);
+			$openid = $wx_user['openid'];
+		}
+		
+		$datail = D('WxUser')->get_datail_data();
+		
+		$id = M('wx_user')->where(array('openid' => $openid))->order('id desc')->getfield('id');
+		
+		$save = array(
+				'nickname'		=> $datail['nickname'],
+				'sex'			=> $datail['sex'],
+				'province'		=> $datail['province'],
+				'city'			=> $datail['city'],
+				'country'		=> $datail['country'],
+				'headimgurl'	=> $datail['headimgurl']
+		);
+		D('WxUser')->where('id=' . $id)->save($save);
+	}
+	
 	/**
 	 * 检查用户状态
 	 */

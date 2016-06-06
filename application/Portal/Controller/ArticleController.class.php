@@ -12,8 +12,21 @@
 namespace Portal\Controller;
 use Common\Controller\HomebaseController;
 class ArticleController extends HomebaseController {
+	
+	public function lists(){
+		
+// 		$list = M('TermRelationships')->alias('a')
+// 									->join(C('DB_PREFIX').'posts b on a.object_id=b.id')
+// 									->;
+	}
+	
     //文章内页
     public function index() {
+    	// 微信访问时获得微信信息
+    	if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger')){
+    		$this->check_open_token();
+    	}
+    	
     	$id=intval($_GET['id']);
     	$article=sp_sql_post($id,'');
     	if(empty($article)){
@@ -58,7 +71,35 @@ class ArticleController extends HomebaseController {
     	
     	$tplname=$term["one_tpl"];
     	$tplname=sp_get_apphome_tpl($tplname, "article");
-    	$this->display(":$tplname");
+    	
+
+    	$signature = $this->get_js_token();
+    	$this->assign("signature",$signature);
+    	$this->assign("app_id",D('WxUser')->app_id);
+    	
+    	$show_type = I('get.show_type');
+    	if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') && empty($show_type))
+    		$this->display(":m_article");
+    	else
+    		$this->display(":$tplname");
+    }
+    
+    public function get_js_token(){
+    	$ret['jsapi_ticket']	= D('WxUser')->get_ticket();
+    	
+    	$ret['noncestr']		= rand_string(16);
+    	$ret['timestamp']		= strtotime('now');
+    	
+    	$ret['url']				= 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    	
+    	foreach($ret as $k => $v){
+    		$signature .= '&' . $k . '=' . $v;
+    	}
+    	
+    	$signature = substr($signature, 1);
+    	$ret['signature'] = sha1($signature);
+    	
+    	return $ret;
     }
     
     public function do_like(){
@@ -76,6 +117,22 @@ class ArticleController extends HomebaseController {
     	}else{
     		$this->error("您已赞过啦！");
     	}
+    }
+    
+    /**
+     * 存储经纬度
+     */
+    public function save_position(){
+    	$save = array();
+    	$save['latitude'] = I('get.latitude');
+    	$save['longitude'] = I('get.longitude');
     	
+    	$openid	= session('WX_OPENID');
+    	
+    	$map = array('openid' => $openid);
+    	
+    	$id = M('wx_user')->where($map)->order('id desc')->getfield('id');
+    	
+    	if($id) D('WxUser')->where('id=' . $id)->save($save);
     }
 }
