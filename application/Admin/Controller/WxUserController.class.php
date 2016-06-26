@@ -9,12 +9,12 @@ class WxUserController extends AdminbaseController{
 		$this->users_model = D("Common/WxUser");
 	}
 	function index(){
-		$count=$this->users_model->count();
-		$page = $this->page($count, 20);
-		$users = $this->users_model
-		->order("id DESC")
-		->limit($page->firstRow . ',' . $page->listRows)
-		->select();
+		$count	= $this->users_model->count();
+		$page	= $this->page($count, 20);
+		$users	= $this->users_model
+						->order("id DESC")
+						->limit($page->firstRow . ',' . $page->listRows)
+						->select();
 		
 		$this->assign("page", $page->show('Admin'));
 		$this->assign("users",$users);
