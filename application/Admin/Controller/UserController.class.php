@@ -24,7 +24,9 @@ class UserController extends AdminbaseController{
 			$roleid=$r['id'];
 			$roles["$roleid"]=$r;
 		}
+		
 		$this->assign("page", $page->show('Admin'));
+		$this->assign('page_name',"user_index");
 		$this->assign("roles",$roles);
 		$this->assign("users",$users);
 		$this->display();
@@ -32,6 +34,7 @@ class UserController extends AdminbaseController{
 	
 	
 	function add(){
+		$this->assign('page_name',"user_index");
 		$roles=$this->role_model->where("status=1")->order("id desc")->select();
 		$this->assign("roles",$roles);
 		$this->display();

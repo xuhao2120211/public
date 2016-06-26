@@ -23,7 +23,8 @@ class AdminPostController extends AdminbaseController {
 	}
 	function index(){
 		
-    
+
+		$this->assign('page_name', "post_index");
 		$this->_lists();
 		$this->_getTree();
 		$this->display();
@@ -35,6 +36,7 @@ class AdminPostController extends AdminbaseController {
 		$this->_getTermTree();
 		$term=$this->terms_model->where("term_id=$term_id")->find();
 		$this->assign("author","1");
+		$this->assign('page_name', "post_add");
 		$this->assign("term",$term);
 		$this->assign("terms",$terms);
 		$this->display();
@@ -99,6 +101,7 @@ class AdminPostController extends AdminbaseController {
 	
 	public function edit(){
 		$id=  intval(I("get.id"));
+		$this->assign('page_name', "post_index");
 		
 		$post=$this->posts_model->where("id=$id")->find();
 		
@@ -192,13 +195,13 @@ class AdminPostController extends AdminbaseController {
 	    }
 		 
 	       // echo  $where;  
-			
+		
 		$count=$this->term_relationships_model
 		->alias("a")
 		->join(C ( 'DB_PREFIX' )."posts b ON a.object_id = b.id")
 		->where($where)
 		->count();
-			
+		
 		$page = $this->page($count, 20);
 			
 			

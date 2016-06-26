@@ -11,7 +11,8 @@ class WxUserController extends AdminbaseController{
 	function index(){
 		$pid = I('get.post_id');
 		$where = array();
-		if($pid) $where['post_id'] = $pid;
+		if($pid)						$where['post_id']		= $pid;
+		if($_SESSION['ADMIN_ID'] !== 1)	$where['b.post_author']	= $_SESSION['ADMIN_ID'];
 		
 		$count	= $this->users_model->where($where)->count();
 		$page	= $this->page($count, 20);
@@ -21,7 +22,8 @@ class WxUserController extends AdminbaseController{
 						->order("id DESC")
 						->limit($page->firstRow . ',' . $page->listRows)
 						->select();
-		
+
+		$this->assign('page_name', "wxuser_index");
 		$this->assign("page", $page->show('Admin'));
 		$this->assign("users",$users);
 		$this->assign("sex",array('','男','女'));
@@ -29,6 +31,7 @@ class WxUserController extends AdminbaseController{
 	}
 	
 	public function show_add(){
+		$this->assign('page_name', "wxuser_index");
 		$this->assign("longitude",I('get.longitude'));
 		$this->assign("latitude",I('get.latitude'));
 		$this->assign("users",$users);

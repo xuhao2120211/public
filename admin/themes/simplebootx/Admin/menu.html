@@ -2,10 +2,12 @@
 	<div class="header-box">
     	<div class="logo"><a href="#"><img src="__ROOT__/Public/img/logo2.png" width="208" height="46" alt="#"></a></div>
         <ul>
-        <li class="cur"><a href="#">管理用户</a></li>
-        <li><a href="#">修改密码</a></li>
+        <if condition="$ADMIN_ID === '1'">
+        	<li <if condition="$page_name eq 'user_index'">class="cur"</if> ><a href="{: U('Admin/User/index')}">管理用户</a></li>
+        </if>
+        <li <if condition="$page_name eq 'user_edit_pwd'">class="cur"</if> ><a href="{: U('Admin/User/edit_pwd', 'id=' . $ADMIN_ID)}">修改密码</a></li>
         </ul>
-        <a href="#" class="tuichu">退出登录</a>
+        <a href="{:U('Admin/Public/logout')}" class="tuichu">退出登录</a>
     </div>
 </div>
 <div class="contant">
@@ -16,7 +18,8 @@
             <p class="p2">Content system </p>
         </div>
         <div class="tab-box">
-        	<a href="#" class="a1 cur"><i></i>发布文章</a>
-            <a href="#" class="a2"><i></i>文章列表</a>
+        	<a href="{: U('Portal/AdminPost/add')}" class="a1 <php>if($page_name == 'post_add') echo 'cur'</php>"><i></i>发布文章</a>
+            <a href="{: U('Portal/AdminPost/index')}" class="a2 <php>if($page_name == 'post_index') echo 'cur'</php>"><i></i>文章列表</a>
+            <a href="{: U('Admin/WxUser/index')}" class="a2 <php>if($page_name == 'wxuser_index') echo 'cur'</php>"><i></i>浏览者详情</a>
         </div>
     </div>

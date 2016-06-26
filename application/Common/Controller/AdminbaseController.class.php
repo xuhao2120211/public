@@ -39,6 +39,9 @@ class AdminbaseController extends AppframeController {
     		}
     		
     	}
+    	
+    	$this->assign('ADMIN_ID', $_SESSION['ADMIN_ID']);
+    	$this->assign('QUERY_STRING', $_SERVER['QUERY_STRING']);
     }
     
     /**
