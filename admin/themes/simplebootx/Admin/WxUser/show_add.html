@@ -1,0 +1,38 @@
+<admintpl file="head" />
+<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=9e5f809c79b81684cd6f19c417263f1a"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+
+	<admintpl file="menu" />
+
+    <div class="right-box">
+    	<p class="tit">浏览者详情</p>
+		<div class="map">
+			<a href="{: U('index')}" class="btn" >返回</a>
+        	<div id="container" class="map-box" style="width:100%;height:500px;position: relative;">
+        	</div>
+            <div class="map-p">浏览者位置受设备与所处环境，以及民用GPS信号精度影响可能存在一定漂移</div>
+        </div>
+    </div>
+
+	<script>
+	    
+		var y = "{: $longitude}";
+		var x = "{: $latitude}";
+		
+		var map = new AMap.Map('container', {
+	        resizeEnable: true,
+	        center: [y, x]
+	        
+	    });
+		
+		var marker;
+		marker = new AMap.Marker({position: [y,x]});
+        marker.setMap(map);
+	    map.setZoomAndCenter(11, [y,x]);
+
+	</script>
+<admintpl file="tail" />

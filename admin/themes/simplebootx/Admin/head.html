@@ -5,18 +5,24 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <title>{$title}</title>
+<link href="__PUBLIC__/simpleboot/themes/{:C('SP_ADMIN_STYLE')}/theme.min.css" rel="stylesheet">
+<link href="__PUBLIC__/simpleboot/css/simplebootadmin.css" rel="stylesheet">
+<link href="__PUBLIC__/js/artDialog/skins/default.css" rel="stylesheet" />
+<link href="__PUBLIC__/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+    
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/style.css">
+
+
+<script type="text/javascript">
+//全局变量
+var GV = {
+    DIMAUB: "__ROOT__/",
+    JS_ROOT: "public/js/",
+    TOKEN: ""
+};
+</script>
 <script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/wind.js"></script>
 <script src="__PUBLIC__/simpleboot/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="header">
-	<div class="header-box">
-    	<div class="logo"><a href="#"><img src="__ROOT__/Public/img/logo2.png" width="208" height="46" alt="#"></a></div>
-        <ul>
-        <li class="cur"><a href="#">管理用户</a></li>
-        <li><a href="#">修改密码</a></li>
-        </ul>
-        <a href="#" class="tuichu">退出登录</a>
-    </div>
-</div>
+

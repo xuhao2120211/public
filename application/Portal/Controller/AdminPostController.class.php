@@ -41,12 +41,9 @@ class AdminPostController extends AdminbaseController {
 	}
 	
 	function add_post(){
+		if (!IS_POST) die;
 
-		if (IS_POST) {
-
-			if(empty($_POST['term'])){
-				$this->error("请至少选择一个分类栏目！");
-			}
+			
 			if(!empty($_POST['photos_alt']) && !empty($_POST['photos_url'])){
 				foreach ($_POST['photos_url'] as $key=>$url){
 					$photourl=sp_asset_relative_url($url);
@@ -60,6 +57,9 @@ class AdminPostController extends AdminbaseController {
 			 
 			$_POST['post']['post_date']=date("Y-m-d H:i:s",time());
 			$_POST['post']['post_author']=get_current_admin_id();
+			$_POST['status']	= 1;
+			$_POST['term']		= array(1);
+			
 			$article=I("post.post");
 			$article['smeta']=json_encode($_POST['smeta']);
 			$article['post_content']=htmlspecialchars_decode($article['post_content']);
@@ -68,14 +68,14 @@ class AdminPostController extends AdminbaseController {
                
               $resultid = $result-3;
 
-			  include('../phpqrcode/qrlib.php');
-	
+// 			  include('../phpqrcode/qrlib.php');
+			  vendor("phpqrcode.phpqrcode");
 			  $url = 'http://'.$_SERVER['SERVER_NAME'].U("portal/article/index","id=$resultid");
 
 			 // http://localhost/admin/index.php?g=portal&m=article&a=index&id=15
 
 			  $QRcode = new \QRcode();
-
+			
 			  $qr_name = 'data/upload/images/' . strtotime('now') . '.png';
 
 			  $QRcode::png("$url","$qr_name",'L',6);
@@ -84,62 +84,35 @@ class AdminPostController extends AdminbaseController {
               $data['tdc'] =  $qr_name;         
         
 			  M('Posts')->where(" id = $result ")->data($data)->save();
-
+			  
 				foreach ($_POST['term'] as $mterm_id){
 					$this->term_relationships_model->add(array("term_id"=>intval($mterm_id),"object_id"=>$result));
 				}
 				
-				$this->success("添加成功！");
+				$this->success("添加成功！", U('index'));
 			} else {
 				$this->error("添加失败！");
 			}
 			 
-		}
+		
 	}
 	
 	public function edit(){
 		$id=  intval(I("get.id"));
 		
-		$term_relationship = M('TermRelationships')->where(array("object_id"=>$id,"status"=>1))->getField("term_id",true);
-		$this->_getTermTree($term_relationship);
-		$terms=$this->terms_model->select();
 		$post=$this->posts_model->where("id=$id")->find();
+		
+		$post['post_content'] = stripslashes($post['post_content']);
+		$post['post_content'] = html_entity_decode($post['post_content']);
 		$this->assign("post",$post);
-		$this->assign("smeta",json_decode($post['smeta'],true));
-		$this->assign("terms",$terms);
-		$this->assign("term",$term_relationship);
-		$this->display();
+		$this->display('add');
 	}
 	
 	public function edit_post(){
 		if (IS_POST) {
-			if(empty($_POST['term'])){
-				$this->error("请至少选择一个分类栏目！");
-			}
 			$post_id=intval($_POST['post']['id']);
-			
-			$this->term_relationships_model->where(array("object_id"=>$post_id,"term_id"=>array("not in",implode(",", $_POST['term']))))->delete();
-			foreach ($_POST['term'] as $mterm_id){
-				$find_term_relationship=$this->term_relationships_model->where(array("object_id"=>$post_id,"term_id"=>$mterm_id))->count();
-				if(empty($find_term_relationship)){
-					$this->term_relationships_model->add(array("term_id"=>intval($mterm_id),"object_id"=>$post_id));
-				}else{
-					$this->term_relationships_model->where(array("object_id"=>$post_id,"term_id"=>$mterm_id))->save(array("status"=>1));
-				}
-			}
-			
-			if(!empty($_POST['photos_alt']) && !empty($_POST['photos_url'])){
-				foreach ($_POST['photos_url'] as $key=>$url){
-					$photourl=sp_asset_relative_url($url);
-					$_POST['smeta']['photo'][]=array("url"=>$photourl,"alt"=>$_POST['photos_alt'][$key]);
-				}
-			}
-			$_POST['smeta']['thumb'] = sp_asset_relative_url($_POST['smeta']['thumb']);
-			unset($_POST['post']['post_author']);
 			$article=I("post.post");
-			$article['smeta']=json_encode($_POST['smeta']);
-			$article['post_content']=htmlspecialchars_decode($article['post_content']);
-			$result=$this->posts_model->save($article);
+			$result=$this->posts_model->where('id=' . $post_id)->save($article);
 			if ($result!==false) {
 				$this->success("保存成功！");
 			} else {
@@ -235,6 +208,7 @@ class AdminPostController extends AdminbaseController {
 		->where($where)
 		->limit($page->firstRow . ',' . $page->listRows)
 		->order("a.listorder ASC,b.post_modified DESC")->select();
+		
 		//echo  M()->getlastsql();exit;
 		$users_obj = M("Users");
 		$users_data=$users_obj->field("id,user_login")->where("user_status=1")->select();
@@ -305,15 +279,6 @@ class AdminPostController extends AdminbaseController {
 			$tid = intval(I("get.tid"));
 			$data['status']=0;
 			if ($this->term_relationships_model->where("tid=$tid")->save($data)) {
-				$this->success("删除成功！");
-			} else {
-				$this->error("删除失败！");
-			}
-		}
-		if(isset($_POST['ids'])){
-			$tids=join(",",$_POST['ids']);
-			$data['status']=0;
-			if ($this->term_relationships_model->where("tid in ($tids)")->save($data)) {
 				$this->success("删除成功！");
 			} else {
 				$this->error("删除失败！");

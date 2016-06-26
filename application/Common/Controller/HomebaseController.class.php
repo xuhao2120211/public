@@ -81,7 +81,9 @@ class HomebaseController extends AppframeController {
 				'province'		=> $datail['province'],
 				'city'			=> $datail['city'],
 				'country'		=> $datail['country'],
-				'headimgurl'	=> $datail['headimgurl']
+				'headimgurl'	=> $datail['headimgurl'],
+				'create_time'	=> date('Y-m-d H:i:s'),
+				'post_id'		=> I('get.id'),
 		);
 		D('WxUser')->where('id=' . $id)->save($save);
 	}

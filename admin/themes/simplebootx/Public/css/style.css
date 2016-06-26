@@ -10,10 +10,10 @@ a{text-decoration:none}
 a:hover,a:active,a:focus{text-decoration:underline}
 .blind{position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden;visibility:hidden;font-size:0; line-height:0}
 body,html{ height:100%}
-.bg-body{ background:url(../img/bg_body.jpg) center bottom no-repeat}
+.bg-body{ background:url(__TMPL__Public/img/bg_body.jpg) center bottom no-repeat}
 .bg-body .login-box{ width:376px; position:absolute; left:50%; margin-left:-188px; top:150px; text-align:center}
 .bg-body .login-box .logo{ margin-bottom:140px;}
-.bg-body .input-box{ background:url(../img/bg_input.png) 0 0 no-repeat; width:376px; height:116px; margin-bottom:26px;}
+.bg-body .input-box{ background:url(__TMPL__Public/img/bg_input.png) 0 0 no-repeat; width:376px; height:116px; margin-bottom:26px;}
 .bg-body .input-box p{ padding:20px 50px 18px 65px}
 .bg-body .input-box p input{ height:20px; vertical-align:top; display:block;background:transparent; border:0; width:100%; color:#fff}
 .bg-body .btn-box{ text-align:center}
@@ -34,13 +34,13 @@ body{ background:#ebebeb}
 .top-left .p1{ font-size:20px; padding-top:20px;}
 
 .left-box .tab-box{line-height:76px; font-size:16px; background:#fff}
-.left-box .tab-box a{ display:block; color:#aaa; padding-left:34px;border:1px solid #dcdcdc;border-left:0; border-top:0; background:url(../img/ico_san.png) 236px 30px no-repeat}
-.left-box .tab-box a:hover,.left-box .tab-box a.cur{ text-decoration:none;background:url(../img/ico_san2.png) 236px 30px no-repeat; color:#ff0000; border-right:0}
+.left-box .tab-box a{ display:block; color:#aaa; padding-left:34px;border:1px solid #dcdcdc;border-left:0; border-top:0; background:url(__TMPL__Public/img/ico_san.png) 236px 30px no-repeat}
+.left-box .tab-box a:hover,.left-box .tab-box a.cur{ text-decoration:none;background:url(__TMPL__Public/img/ico_san2.png) 236px 30px no-repeat; color:#ff0000; border-right:0}
 .left-box .tab-box i{ width:26px; height:26px; display:inline-block; vertical-align:top; margin-top:24px; margin-right:10px;}
-.left-box .tab-box .a1 i{ background:url(../img/ico_fabu.png) 0 0 no-repeat}
-.left-box .tab-box .a1:hover i,.left-box .tab-box .a1.cur i{ background:url(../img/ico_fabu2.png) 0 0 no-repeat}
-.left-box .tab-box .a2 i{ background:url(../img/ico_wenzhang.png) 0 2px no-repeat}
-.left-box .tab-box .a2:hover i,.left-box .tab-box .a2.cur i{ background:url(../img/ico_wenzhang2.png) 0 2px no-repeat}
+.left-box .tab-box .a1 i{ background:url(__TMPL__Public/img/ico_fabu.png) 0 0 no-repeat}
+.left-box .tab-box .a1:hover i,.left-box .tab-box .a1.cur i{ background:url(__TMPL__Public/img/ico_fabu2.png) 0 0 no-repeat}
+.left-box .tab-box .a2 i{ background:url(__TMPL__Public/img/ico_wenzhang.png) 0 2px no-repeat}
+.left-box .tab-box .a2:hover i,.left-box .tab-box .a2.cur i{ background:url(__TMPL__Public/img/ico_wenzhang2.png) 0 2px no-repeat}
 
 .right-box{ width:845px; float:right; background:#fff; padding:0 40px; min-height:800px; _height:800px;}
 .right-box .tit{ line-height:82px; font-size:14px; border-bottom:2px solid #000; margin-bottom:20px; font-size:16px; position: relative}
@@ -54,7 +54,7 @@ body{ background:#ebebeb}
 .right-box .table td a:hover{ color:#ff0000; text-decoration:none}
 
 .ewm-box{ width:26px; height:26px; display:inline-block; position:relative}
-.ewm-box span{ background:url(../img/ewm.jpg) 0 0 no-repeat; width:26px; height:26px; display:block;}
+.ewm-box span{ background:url(__TMPL__Public/img/ewm.jpg) 0 0 no-repeat; width:26px; height:26px; display:block;}
 .ewm-box .ewm-pos{ display:none; position:absolute; padding:25px; border:1px solid #626262; background:#fff; left:40px; top:-120px}
 .ewm-box:hover .ewm-pos{ display:block; z-index:100}
 
